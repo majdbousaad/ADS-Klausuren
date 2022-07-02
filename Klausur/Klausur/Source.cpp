@@ -1,8 +1,28 @@
 #include "WS0708.h"
 
 #include<iostream>
+#include "List.h"
 
 using namespace std;
+
+void SelectionSort(Liste& unsorted) {
+	Node* start = unsorted.head->next;
+
+	if (!start)
+		return;
+
+	Node* min; // 2 2 3 4 5
+	for (Node* travel = start; travel != nullptr; travel = travel->next) {
+		min = travel;
+		for (Node* find_min = travel->next; find_min != nullptr; find_min = find_min->next) {
+			if (find_min->key < min->key)
+				min = find_min;
+		}
+		unsorted.swap(travel, min);
+		travel = min;
+
+	}
+}
 
 int main() {
 
@@ -66,6 +86,24 @@ int main() {
 
 	}
 
+	// ADS_Klausur17_Test
+	Liste L;
+	L.add(5);
+	L.add(4);
+	L.add(3);
+	L.add(3);
+	L.add(2);
+	L.add(1);
+
+	SelectionSort(L);
+
+	for (Node* i = L.head->next; i != nullptr; i = i->next)
+	{
+		cout << i->key << " ";
+	}
+	cout << endl;
+
+	cout << "==========================" << endl;
 
 	system("PAUSE");
 	return 0;

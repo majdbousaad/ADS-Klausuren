@@ -18,6 +18,12 @@
     <ClInclude Include="WS0708.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DoubleList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
